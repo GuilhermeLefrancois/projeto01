@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista</title>
+        <link href="/public/assets/reset.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href= "/public/assets/style.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+      <header>
+            <div id="div-header">
+                <h1>Seu Gerenciador de Tarefas</h1>
+            </div>
+      </header>
+      
+      <main>
+        <div class="overflow-auto" id="div-main">
+            <% data.forEach(function(details) { %>
+            <div id="div-lista">
+                <label>Nome: </label>
+                <input class="form-control" disabled="false" value="<%= details.nome %>">
+                <label>Descricao: </label>
+                <input class="form-control" disabled="false" value="<%= details.descricao %>">
+                <label>Prioridade: </label>
+                <input class="form-control" disabled="false" value="<%= details.prioridade %>">
+                <label>Arquivo: </label>
+                <input class="form-control" disabled="false" value="<%= details.arquivo %>">
+                <label>Data de Cadastro: </label>
+                <input class="form-control" disabled="false" value="<%= details.data_cadastro %>">
+                <label>Data de Conclusão: </label>
+                <input class="form-control" disabled="false" value="<%= details.data_conclusao %>">
+                <label>Status: </label>
+                <select class="custom-select" id="inputGroupSelect01" name="status">
+                    <option selected><%= details.status %></option>
+                    <option value="Não iniciada">Não iniciada</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select> 
+            </div>
+            <% }) %>
+        </div>
+      </main>
+      
+      <footer>
+
+      </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

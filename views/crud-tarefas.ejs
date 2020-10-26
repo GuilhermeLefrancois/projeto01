@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gerenciador</title>
+        <link href="/public/assets/reset.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href= "/public/assets/style.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <header>
+            <div id="div-header">
+                <h1>Seu Gerenciador de Tarefas</h1>
+            </div>
+        </header>
+        
+        <main>
+            <div id="div-main">
+                <div class="overflow-auto">
+                    <table class="table table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Prioridade</th>
+                                <th>Arquivo</th>
+                                <th>Data de Cadastro</th>
+                                <th>Data de Conclusão</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.forEach(function(details) { %>
+                            <tr>
+                                <form action="" method="POST">
+                                    <td><input type="text" class="form-control" name="nome-<%= details.id %>" value="<%= details.nome %>" </td>
+                                    <td><input type="text" class="form-control" name="descricao" value="<%= details.descricao %>" </td>
+                                    <td>
+                                        <select class="custom-select" id="inputGroupSelect01" name="prioridade">
+                                            <option selected><%= details.prioridade %> </option>
+                                            <option value="Alta">Alta</option>
+                                            <option value="Média">Média</option>
+                                            <option value="Baixa">Baixa</option>
+                                        </select>  
+                                    </td>
+                                    <td><input type="file" name="arquivo" value="<%= details.arquivo %>"</td>
+                                    <td><input type="date" class="form-control" name="data_cadastro" value="<%= details.data_cadastro %>"</td>
+                                    <td><input type="date" class="form-control" name="data_conclusao" value="<%= details.data_conclusao %>"</td>
+                                    <td>
+                                        <select class="custom-select" id="inputGroupSelect01" name="status">
+                                            <option selected><%= details.status %></option>
+                                            <option value="Não iniciada">Não iniciada</option>
+                                            <option value="Em andamento">Em andamento</option>
+                                            <option value="Concluída">Concluída</option>
+                                        </select>   
+                                    </td>
+                                    <td><a href="/editar-tarefa/<%= details._id %>"><img src="/public/assets/images/editar.png"></a><br><a href="/deletar-tarefa/<%= details._id %>"><img src="/public/assets/images/excluir.png"></a></td>
+                                </form>
+                            </tr>
+                            <% }) %>
+                            <tr>
+                                <form action="cadastrar-tarefa" method="POST">
+                                    <td><input type="text" class="form-control" name="nome" value=""> </td>
+                                    <td><input type="text" class="form-control" name="descricao" value=""> </td>
+                                    <td>
+                                        <select class="custom-select" id="inputGroupSelect01" name="prioridade">
+                                            <option selected></option>
+                                            <option value="Alta">Alta</option>
+                                            <option value="Média">Média</option>
+                                            <option value="Baixa">Baixa</option>
+                                        </select>  
+                                    </td>
+                                    <td><input type="file" name="arquivo" value=""> </td>
+                                    <td><input type="date" class="form-control" name="data_cadastro" value=""> </td>
+                                    <td><input type="date" class="form-control" name="data_conclusao" value=""> </td>
+                                    <td>
+                                        <select class="custom-select" id="inputGroupSelect01" name="status">
+                                            <option selected></option>
+                                            <option value="Não iniciada">Não iniciada</option>
+                                            <option value="Em andamento">Em andamento</option>
+                                            <option value="Concluída">Concluída</option>
+                                        </select>   
+                                    </td>
+                                    <td><button type="submit"><img src="/public/assets/images/incluir.png"></button></td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+            </div>
+        </main>
+        
+        <footer>
+
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+body
+{
+    background-image: url("/public/assets/images/Background4.jpg");
+}
+
+#div-login
+{
+    background-color: white;
+    border-color: black;
+    border-width: 1px;
+    border-style: outset;
+    width: 700px;
+    height: 400px;
+    margin: 10% auto;
+    padding: 2%;
+}
+
+#div-login h2
+{
+    margin: auto 40%;
+}
+
+#div-login label
+{
+    display: block;
+    margin-top: 7%;
+}
+
+#div-login input 
+{
+    width: 100%;
+}
+
+#div-login button
+{
+    width: 100%;
+    margin: 7% auto;
+}
+
+#div-header
+{
+    background-color:lightgray;
+    width: 100%;
+    height: 15vh;
+    padding-top: 1.5%;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#div-header h1
+{
+    margin-left: 35%;
+    color: darkblue;
+}
+
+#div-main
+{
+    background-color: whitesmoke;
+    height: 85vh;
+    width: 95%;
+    margin: 0% auto
+}
+
+#div-main input[type="file"]
+{
+    margin-top: 5px;
+}
+
+#div-main .custom-select
+{
+    width: 100px;
+}
+
+#div-lista
+{
+    height: 350px;
+    width: 50%;
+    margin: 5px auto;
+    border-style: outset;
+    border-width: 2px;
+    border-color: blue;
+    padding-left: 5px;
+}
+
+#div-lista input, select
+{
+    width: 70%;
+    display: inline-block;
+    margin: 5px
+}
+
+#div-main .custom-select
+{
+    width: 70%;
+}
+
+#div-lista label
+{
+    width: 25%;
+    margin: 0px
+}
+
